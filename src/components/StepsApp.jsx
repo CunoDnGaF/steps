@@ -9,15 +9,15 @@ export const StepsApp = () => {
   function submitForm(e) {
     e.preventDefault();
 
-    let data = {
+    const data = {
       date: e.target.date.value,
       distance: Number(e.target.distance.value),
     }
     
-    let workoutByDate = workoutList.findIndex((workout) => workout.date === data.date);
+    const workoutByDate = workoutList.findIndex((workout) => workout.date === data.date);
 
     if(workoutByDate > -1) {
-      let newWorkoutList = workoutList;
+      const newWorkoutList = workoutList;
       newWorkoutList[workoutByDate].distance += data.distance;
       setWorkoutList([...newWorkoutList]);
     } else {
